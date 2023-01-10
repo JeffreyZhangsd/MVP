@@ -1,0 +1,38 @@
+{
+  "name": "mvp",
+  "version": "1.0.0",
+  "description": "Minimum Viable Product!",
+  "main": "./client/index.jsx",
+  "scripts": {
+    "dev": "webpack serve",
+    "build": "webpack --watch",
+    "server-dev": "nodemon server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeffreyZhangsd/MVP.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JeffreyZhangsd/MVP/issues"
+  },
+  "homepage": "https://github.com/JeffreyZhangsd/MVP#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "babel-loader": "^9.1.2",
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
+  }
+}
