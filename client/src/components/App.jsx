@@ -6,7 +6,7 @@ import Main from './Main';
 const App = () => {
   // javascript functionality yes
   // I want to use views for Learn and switch between them
-  const [view, setView] = useState({ name: 'Login', viewProps: {} });
+  const [view, setView] = useState({ name: 'Main', viewProps: {} });
 
   const changeView = (name, someProps = {}) => {
     return (moreProps = {}) => {
