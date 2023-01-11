@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
 const Learn = () => {
   return (
     <section>
-      <h2>Learn comp</h2>
+      <h2>Learn component</h2>
     </section>
   );
 };

@@ -1,9 +1,15 @@
-import React from "react";
+import React from 'react';
 
 const Main = () => {
   return (
-    <section>
-      <h2>Main comp</h2>
+    <section className="row">
+      <div className="grid">
+        <section>
+          <div>
+            <h2>Main comp</h2>
+          </div>
+        </section>
+      </div>
     </section>
   );
 };

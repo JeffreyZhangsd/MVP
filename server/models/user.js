@@ -1,5 +1,14 @@
+const db = require('../database');
+
 module.exports = {
-  getUser: () => {
-    console.log('eventually will get user');
+  getAll: () => {
+    return db.find({}).sort().exec();
+  },
+  getUser: (user) => {
+    return db.findOne({ username: user }).sort().exec();
+  },
+  postUser: (input) => {
+    console.log('input model: ', input);
+    return db.create(input);
   },
 };
