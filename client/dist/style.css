@@ -374,6 +374,17 @@ a:hover {
   background-color: rgb(124, 124, 255);
 }
 
+.logout {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  color: white;
+  margin: 10px;
+  height: 22px;
+}
 /*
   ========================================
   Primary footer

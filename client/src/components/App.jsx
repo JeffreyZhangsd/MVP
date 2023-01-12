@@ -90,6 +90,15 @@ const App = () => {
       });
   };
 
+  const logoutHandler = () => {
+    axios
+      .get('/logout')
+      .then(async () => {
+        console.log('logging out!');
+        window.location.reload();
+      })
+      .catch((err) => console.log('error logging out: ', err));
+  };
   // getUserInfo('test1');
   return (
     <>
@@ -102,6 +111,9 @@ const App = () => {
           <ul>
             <li>Score: {score} </li>
             <li style={{ fontWeight: 700 }}>{user}</li>
+            <button onClick={() => logoutHandler()} className="logout">
+              logout
+            </button>
           </ul>
         </nav>
       </header>
