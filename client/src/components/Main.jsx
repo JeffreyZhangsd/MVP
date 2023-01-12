@@ -5,7 +5,6 @@ const Main = ({ changeView, getAllUsers, leaderboard }) => {
     changeView(e.target.name);
   };
   useEffect(() => getAllUsers(), []);
-  console.log(leaderboard);
   return (
     <section className="row">
       <div className="grid">
@@ -14,8 +13,9 @@ const Main = ({ changeView, getAllUsers, leaderboard }) => {
             <h2>LEADERBOARD</h2>
             {leaderboard.map((peeps) => (
               <div key={peeps._id}>
-                <h5>{peeps.username}</h5>
-                <h5>{peeps.score}</h5>
+                <h4>
+                  {peeps.username} {': '} {peeps.score}
+                </h4>
               </div>
             ))}
           </div>

@@ -84,6 +84,7 @@ module.exports = {
       res.status(401).end();
       return;
     }
+    console.log(req.cookies);
     res.send(`${userSession.username}`).end();
   },
 

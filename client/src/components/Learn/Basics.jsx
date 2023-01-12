@@ -70,13 +70,11 @@ const Basics = ({ changeView, updateUserScore, user }) => {
     const bool = e.target.name;
     setAnswered(true);
     if (bool === 'true') {
-      console.log('correct yay');
       updateUserScore(user);
       const right = document.getElementById('correct');
       right.style.backgroundColor = 'greenyellow';
       buttonRef.current.disabled = true;
     } else {
-      console.log('wrong.');
       const right = document.getElementById('correct');
       right.style.backgroundColor = 'greenyellow';
       buttonRef.current.disabled = true;
@@ -116,6 +114,7 @@ const Basics = ({ changeView, updateUserScore, user }) => {
                 } else {
                   return (
                     <button
+                      id="incorrect"
                       className="answers col-1-3"
                       key={a.a}
                       name={`${a.correct}`}
