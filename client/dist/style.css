@@ -241,7 +241,7 @@ a:hover {
 
 .row,
 .row-alt {
-  min-width: 1200px;
+  min-width: 100%;
 }
 
 .row {
@@ -461,6 +461,11 @@ nav li:last-child {
   font-weight: 900;
 }
 
+#home:hover {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.5);
+}
+
 /*
   ========================================
   Speakers
@@ -583,11 +588,53 @@ textarea {
 
 .leaderboard {
   height: 100%;
-  border: white solid 2px;
+  border: cyan solid 5px;
+  margin-right: 10px;
+}
+
+.categories {
+  height: 100%;
+  border: white solid 5px;
+  text-align: end;
+  padding-bottom: 22px;
 }
 
 .skills {
-  height: 100%;
+  text-align: center;
+}
 
-  border: white solid 2px;
+.skill {
+  height: 80px;
+  width: 160px;
+  border-radius: 15%;
+  margin: 0 20px;
+}
+
+.skill:hover {
+  background-color: rgb(124, 124, 255);
+  cursor: pointer;
+  border: rgb(0, 0, 0) solid 2px;
+}
+
+.center {
+  text-align: center;
+}
+
+/*
+  ========================================
+  Learn Page
+  ========================================
+*/
+
+.skillSelect {
+  height: 30px;
+  width: 100%;
+  border-radius: 15%;
+  margin: 10px 0;
+}
+
+.skillSelect:hover {
+  background-color: rgb(124, 124, 255);
+  cursor: pointer;
+  border: rgb(0, 0, 0) solid 2px;
 }

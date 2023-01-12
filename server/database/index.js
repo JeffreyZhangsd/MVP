@@ -8,6 +8,7 @@ const userSchema = mongoose.Schema({
   id: Number,
   username: { type: String, unique: true },
   password: String,
+  score: { type: Number, default: 0 },
 });
 
 const USERS = mongoose.model('USERS', userSchema);
