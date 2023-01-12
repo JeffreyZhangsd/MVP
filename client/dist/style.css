@@ -588,7 +588,7 @@ textarea {
 
 .leaderboard {
   height: 100%;
-  border: cyan solid 5px;
+  border: white solid 5px;
   margin-right: 10px;
 }
 
@@ -629,7 +629,7 @@ textarea {
 .skillSelect {
   height: 30px;
   width: 100%;
-  border-radius: 15%;
+  border-radius: 20px;
   margin: 10px 0;
 }
 
@@ -637,4 +637,51 @@ textarea {
   background-color: rgb(124, 124, 255);
   cursor: pointer;
   border: rgb(0, 0, 0) solid 2px;
+}
+
+.selected {
+  background-color: rgb(149, 149, 255);
+}
+
+/*
+  ========================================
+  Basics Learn
+  ========================================
+*/
+
+.footer {
+  position: absolute;
+  bottom: 0;
+}
+
+#next {
+}
+
+.next {
+  text-align: end;
+  position: relative;
+  float: right;
+  padding: 0 20px;
+  font-size: 50px;
+  border-radius: 10px;
+}
+
+.next:hover {
+  cursor: pointer;
+  background-color: rgb(134, 255, 150);
+}
+
+.answers {
+  text-align: center;
+  margin: 0 100px;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.answers:hover {
+  cursor: pointer;
+  background-color: rgb(124, 124, 255);
+}
+
+#correct {
 }

@@ -8,7 +8,6 @@ module.exports = {
       .catch((err) => res.statuse(404).send(err));
   },
   get: (req, res) => {
-    console.log(req.params.user);
     model.user
       .getUser(req.params.user)
       .then((data) => res.status(200).send(data))
@@ -18,6 +17,12 @@ module.exports = {
     model.user
       .postUser(req.body)
       .then(() => res.status(201).send())
+      .catch((err) => res.status(404).send(err));
+  },
+  update: (req, res) => {
+    model.user
+      .updateScore(req.params.user)
+      .then((data) => res.status(204).send(data))
       .catch((err) => res.status(404).send(err));
   },
 };

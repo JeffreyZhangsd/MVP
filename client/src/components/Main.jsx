@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-const Main = ({ changeView }) => {
+const Main = ({ changeView, getAllUsers, leaderboard }) => {
+  const clickHandle = (e) => {
+    changeView(e.target.name);
+  };
+  useEffect(() => getAllUsers(), []);
+  console.log(leaderboard);
   return (
     <section className="row">
       <div className="grid">
         <section className="center">
           <div className="col-1-3 leaderboard">
             <h2>LEADERBOARD</h2>
+            {leaderboard.map((peeps) => (
+              <div key={peeps._id}>
+                <h5>{peeps.username}</h5>
+                <h5>{peeps.score}</h5>
+              </div>
+            ))}
           </div>
           <div className="col-6-10 categories">
             <section className="row skills">

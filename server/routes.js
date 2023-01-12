@@ -16,5 +16,6 @@ router.get('/logout', handlers.logoutHandler);
 router.get('/users', controller.user.getAllUsers);
 router.get('/users/:user?', controller.user.get);
 router.post('/users', controller.user.post);
+router.patch('/users/:user?', controller.user.update);
 
 module.exports = router;

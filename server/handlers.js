@@ -84,7 +84,7 @@ module.exports = {
       res.status(401).end();
       return;
     }
-    res.send(`Welcome ${userSession.username}!`).end();
+    res.send(`${userSession.username}`).end();
   },
 
   refreshHandler: (req, res) => {

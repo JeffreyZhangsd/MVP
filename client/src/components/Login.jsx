@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Signup from './Signup';
 
-const Login = ({ changeView }) => {
+const Login = ({ changeView, getUserInfo }) => {
   const instruments = ['Piano', 'Guitar', 'Violin'];
   const [instr, setInstr] = useState('');
   const img =
@@ -20,13 +20,14 @@ const Login = ({ changeView }) => {
       .then(() => {
         axios
           .get('/welcome')
-          .then((success) => {
-            console.log(success.data);
-            changeView();
+          .then(async (success) => {
+            getUserInfo(success.data);
+            await changeView();
           })
           .catch((err) => console.log(err));
       })
       .catch((err) => {
+        alert('incorrect username and/or password!');
         console.log(err);
       });
   };

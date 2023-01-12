@@ -1,4 +1,5 @@
 import React, { useState, useEffect, Suspense } from 'react';
+import axios from 'axios';
 import Learn from './Learn';
 import Login from './Login';
 import Main from './Main';
@@ -11,7 +12,7 @@ import Scales from './Learn/Scales';
 
 const App = () => {
   // views to switch what is rendered
-  const [view, setView] = useState({ name: 'Learn', viewProps: {} });
+  const [view, setView] = useState({ name: 'Login', viewProps: {} });
 
   const changeView = (name, someProps = {}) => {
     return (moreProps = {}) => {
@@ -23,13 +24,30 @@ const App = () => {
   const renderView = () => {
     switch (view.name) {
       case 'Login':
-        return <Login changeView={changeView('Main')} />;
+        return (
+          <Login
+            changeView={changeView('Main')}
+            getUserInfo={(u) => getUserInfo(u)}
+          />
+        );
       case 'Main':
-        return <Main changeView={changeView('Learn')} />;
+        return (
+          <Main
+            changeView={changeView('Learn')}
+            getAllUsers={getAllUsers}
+            leaderboard={leaderboard}
+          />
+        );
       case 'Learn':
-        return <Learn changeView={changeView('Main')} />;
+        return <Learn changeView={(v) => changeView(v)} />;
       case 'Basics':
-        return <Basics changeView={changeView('Learn')} />;
+        return (
+          <Basics
+            changeView={changeView('Learn')}
+            updateUserScore={(u) => updateUserScore(u)}
+            user={user}
+          />
+        );
       case 'Keys':
         return <Keys changeView={changeView('Learn')} />;
       case 'Pitch':
@@ -42,18 +60,48 @@ const App = () => {
         return <Scales changeView={changeView('Learn')} />;
     }
   };
+  const [score, setScore] = useState(0);
+  const [user, setUser] = useState('Login!');
+  const [leaderboard, setLeaderboard] = useState([]);
+
+  const getUserInfo = (u) => {
+    axios
+      .get(`/users/${u}`, {
+        username: u,
+      })
+      .then((user) => {
+        setScore(user.data.score);
+        setUser(user.data.username);
+      });
+  };
+
+  const getAllUsers = () => {
+    axios.get('/users/').then((all) => setLeaderboard(all.data));
+  };
+
+  const updateUserScore = (u) => {
+    axios
+      .patch(`/users/${u}`, {
+        username: u,
+      })
+      .then(() => {
+        console.log('updated');
+        getUserInfo(user);
+      });
+  };
+
+  // getUserInfo('test1');
   return (
     <>
       <header className="primary-header container group">
         <nav>
           <h1 id="home" onClick={changeView('Main')}>
             {' '}
-            Musico{' '}
+            Triomusico{' '}
           </h1>
           <ul>
-            <li>Instrument: </li>
-            <li>Score: </li>
-            <li>User</li>
+            <li>Score: {score} </li>
+            <li style={{ fontWeight: 700 }}>{user}</li>
           </ul>
         </nav>
       </header>

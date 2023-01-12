@@ -65,7 +65,6 @@ const Signup = () => {
     const pass = e.target.passSign.value;
     console.log(user, pass);
     createUser(user, pass);
-    // window.location.reload();
   };
   return (
     <>
@@ -79,6 +78,9 @@ const Signup = () => {
           </span>
           <form onSubmit={handleSubmit}>
             <div>
+              <h5 style={{ color: 'red' }}>
+                Warning: Usernames and passwords are case sensitive!
+              </h5>
               <h3>Input username!</h3>
               <textarea type="text" name="userSign" maxLength="100" />
             </div>
