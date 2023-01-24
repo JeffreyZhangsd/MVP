@@ -1,6 +1,6 @@
-# MVP
+# Triomusico
 
-Very cool application!
+Music Theory application!
 
 npm install
 
