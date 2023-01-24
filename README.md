@@ -2,6 +2,10 @@
 
 Music Theory application!
 
+
+
+To run application - 
+
 npm install
 
 npm run build
